@@ -37,7 +37,7 @@ if (-not $?) {
 
 # Activate virtual environment
 Write-Host "Activating virtual environment..." -ForegroundColor Cyan
-& ".\\.venv\Scripts\Activate.ps1"
+& .\.venv\Scripts\Activate.ps1
 
 # Install dependencies
 Write-Host "Installing dependencies..." -ForegroundColor Cyan
