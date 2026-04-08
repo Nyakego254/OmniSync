@@ -15,6 +15,13 @@ class OmniSyncApp(ctk.CTk):
         self.geometry("950x650")
         self.minsize(800, 500)
         
+        # Set window icon
+        try:
+            if os.path.exists("assets/omnisync.ico"):
+                self.iconbitmap("assets/omnisync.ico")
+        except:
+            pass  # Icon not found, continue without it
+        
         # --- Data storage (to keep history) ---
         self.call_history = []   # list of dicts
         self.message_history = [] # sms + notifications
