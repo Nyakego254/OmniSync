@@ -58,7 +58,26 @@ This creates the standalone app at: `.\dist\OmniSync.exe`
 .\create_shortcut.ps1
 ```
 
-Now you have a complete Windows application that can be shared and installed on any machine!
+**Step 4: Create installer package**
+```powershell
+.\make_installer.ps1
+```
+
+The installer package is created as a ZIP file next to your repository root, e.g. `OmniSync-Installer-v1.0.0.zip`.
+
+## Release Workflow
+
+There are two ways to publish a release:
+
+1. Use the included release script locally:
+```powershell
+.\release.ps1
+```
+This will push the `main` branch and the `v1.0.0` tag to GitHub. If `gh` is installed, it will also create a GitHub release and attach `dist\OmniSync.exe`.
+
+2. Use GitHub Actions automatically:
+- Push a tag like `v1.0.0` to GitHub
+- The workflow in `.github/workflows/release.yml` will build the executable and publish the release asset automatically
 
 ## Project Structure
 - `app.py` - Main desktop GUI (with icon support)
