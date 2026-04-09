@@ -11,43 +11,32 @@ A real-time desktop application that monitors your Android phone's calls, SMS me
 - 🎯 **Custom Icon** - Professional app appearance
 - 📦 **Standalone Executable** - Package as Windows app
 
-## Quick Install (Windows)
+## Quick Start (Windows)
 
-**Option 1: One-Line Install (Easiest)**
-```powershell
-powershell -Command "Invoke-WebRequest -Uri 'https://raw.githubusercontent.com/Nyakego254/OmniSync/main/install.ps1' -OutFile 'install.ps1'; .\install.ps1"
-```
+**Installation:**
+1. Extract all files from this ZIP to a folder (e.g., `C:\OmniSync`)
+2. Double-click `OmniSync.exe` to run the app
+3. The app is pre-configured with Firebase settings
 
-**Option 2: Manual Install**
-```powershell
-git clone https://github.com/Nyakego254/OmniSync.git
-cd OmniSync
-python -m venv .venv
-.\.venv\Scripts\Activate.ps1
-pip install -r requirements.txt
-python app.py
-```
+**That's it!** The app will automatically connect to Firebase and start monitoring your phone data.
 
 ## Setup Requirements
-1. Python 3.8+ installed
-2. Firebase service account key (place as `firebase-key.json` in project folder)
-3. Android companion app granting phone permissions
+- Windows 10/11
+- Firebase service account key (included in this package as `firebase-key.json`)
+- Android companion app granting phone permissions
 
 ## Configuration
-Edit `app.py` and update your Firebase URL:
-```python
-db_url="https://your-firebase-url.firebaseio.com/"
-```
+The app is pre-configured with Firebase settings. If you need to change the Firebase project:
+1. Replace `firebase-key.json` with your own Firebase service account key
+2. Edit `OmniSync.exe` (requires rebuilding from source)
 
-## Package as Standalone Windows App
+## Troubleshooting
+- **App won't start**: Make sure all files from the ZIP are extracted to the same folder
+- **No data showing**: Check that your Android app is sending data to Firebase
+- **Connection issues**: Verify internet connection and Firebase project settings
 
-**Step 1: Install build dependencies** (one-time only)
-```powershell
-pip install --only-binary :all: Pillow pyinstaller
-```
-
-**Step 2: Build the executable**
-```powershell
+## Support
+For issues or questions, check the GitHub repository: https://github.com/Nyakego254/OmniSync
 .\build.ps1
 ```
 
