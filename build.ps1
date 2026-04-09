@@ -17,12 +17,12 @@ Write-Host "Building executable..." -ForegroundColor Cyan
 Write-Host ""
 
 # Build with PyInstaller
-pyinstaller `
+python -m PyInstaller `
     --onefile `
     --windowed `
     --icon=assets/omnisync.ico `
     --name=$appName `
-    --add-data="assets:assets" `
+    --add-data="assets;assets" `
     --hidden-import=firebase_admin `
     app.py
 
