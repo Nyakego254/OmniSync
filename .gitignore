@@ -13,6 +13,11 @@ __pycache__/
 *$py.class
 *.so
 
+# Build artifacts
+build/
+dist/
+*.spec
+
 # Environment variables
 .env
 .env.local
